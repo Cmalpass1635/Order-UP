@@ -1,0 +1,44 @@
+﻿@model IEnumerable<OrderUp.Models.MENU>
+
+@{
+    ViewBag.Title = "Menu";
+}
+
+<h2>Menu</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateMenu")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FoodName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FoodName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditMenu", new { menuid=item.MenuID }) |
+            @Html.ActionLink("Delete", "DeleteMenu", new { menuid=item.MenuID })
+        </td>
+    </tr>
+}
+
+</table>

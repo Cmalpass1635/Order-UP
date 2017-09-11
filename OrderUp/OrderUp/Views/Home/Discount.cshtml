@@ -1,0 +1,44 @@
+﻿@model IEnumerable<OrderUp.Models.DISCOUNT>
+
+@{
+    ViewBag.Title = "Discounts";
+}
+
+<h2>Discounts</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateDiscount")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DiscountName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiscountType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiscountAmount)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiscountName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiscountType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiscountAmount)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditDiscount", new { discountid=item.DiscountID }) |
+            @Html.ActionLink("Delete", "DeleteDiscount", new { discountid=item.DiscountID })
+        </td>
+    </tr>
+}
+
+</table>

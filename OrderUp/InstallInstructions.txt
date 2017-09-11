@@ -1,0 +1,10 @@
+Install Instructions:
+
+Create New Database
+Update DefaultConnection in Web.Config
+From the Packager Manager Console
+	Enable-Migrations
+	Create-Migration MigrationName
+	Update-Database
+Run OrderUpTableCreate.sql
+	
